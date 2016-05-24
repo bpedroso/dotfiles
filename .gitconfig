@@ -1,0 +1,62 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Bruno Pedroso
+	email = 
+
+[color]
+	status = auto
+    branch = auto
+	log = auto
+	commit = auto
+	diff = auto
+    interactive = auto
+	ui = true
+	pager = true
+
+[color "branch"]
+    current = yellow
+	local = green
+	remote = cyan
+
+[color "diff"]
+	meta = yellow
+	frag = cyan
+	old = red
+	new = green 
+
+[color "status"]
+	changed = yellow
+
+[apply]
+    whitespace = nowarn
+
+[alias]
+	co = checkout
+    st = status
+	df = diff
+	dc = diff --cached
+	pr = pull --rebase
+	pop = stash pop
+	lg = log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
+    ls = log --stat
+    com = commit -m
+
+[http]
+	sslVerify = false
+
+[credential]
+	helper = store
+
+[core]
+	excludesfile = /Users/bruno.pedroso/.gitignore_global
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[push]
+	default = simple

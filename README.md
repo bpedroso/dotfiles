@@ -1,2 +1,4 @@
-# dotfiles
-My dotfiles
+Mac Dot Files
+
+ - ZSH
+ - GIT
