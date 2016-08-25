@@ -46,6 +46,8 @@
 
 [credential]
 	helper = store
+[credential]
+        helper = cache --timeout=864000
 
 [core]
 	excludesfile = /Users/bruno.pedroso/.gitignore_global
