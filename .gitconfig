@@ -1,4 +1,5 @@
 # This is Git's per-user configuration file.
+# Put this file in your home
 [user]
     name = 
     email = 
