@@ -1,64 +1,70 @@
 # This is Git's per-user configuration file.
 [user]
-	name = Bruno Pedroso
-	email = 
+    name = 
+    email = 
+    username = 
 
 [color]
-	status = auto
+    status = auto
     branch = auto
-	log = auto
-	commit = auto
-	diff = auto
+    log = auto
+    commit = auto
+    diff = auto
     interactive = auto
-	ui = true
-	pager = true
+    ui = true
+    pager = true
 
 [color "branch"]
     current = yellow
-	local = green
-	remote = cyan
+    local = green
+    remote = cyan
 
 [color "diff"]
-	meta = yellow
-	frag = cyan
-	old = red
-	new = green 
+    meta = yellow
+    frag = cyan
+    old = red
+    new = green 
 
 [color "status"]
-	changed = yellow
+    changed = yellow
 
 [apply]
     whitespace = nowarn
 
 [alias]
-	co = checkout
+    co = checkout
     st = status
-	df = diff
-	dc = diff --cached
-	pr = pull --rebase
-	pop = stash pop
-	lg = log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
+    df = diff
+    dc = diff --cached
+    pr = pull --rebase
+    pop = stash pop
+    lg = log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
     ls = log --stat
-    com = commit -m
+    changes = "!f() { git log --pretty=format:'* %s' $1..$2; }; f"
+    details = log -n1 -p --format=fuller
+    cim = commit -m
+    all = add . --all
+    aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
 
 [http]
-	sslVerify = false
+    sslVerify = false
 
 [credential]
-	helper = store
-[credential]
-        helper = cache --timeout=864000
+    helper = cache --timeout=864000
+    helper = store --file ~/.my-credentials
 
 [core]
-	excludesfile = /Users/bruno.pedroso/.gitignore_global
+    excludesfile = ~/.gitignore_global
+    autocrlf = input
+    compression = 9
+    filemode = false
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+[diff]
+    mnemonicprefix = true
 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[merge]
+    log = true
+    ff = false
 
 [push]
-	default = simple
+    default = simple
