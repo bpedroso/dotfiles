@@ -86,9 +86,15 @@ export PATH=$PATH:~/.vimpkg/bin
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ll="ls -lha"
+alias python=/usr/local/bin/python3.7
 alias githubspace="cd /Users/bruno.pedroso/dev/github"
 alias elkspace="cd /Users/bruno.pedroso/dev/elastic"
 alias gitbitspace="cd /Users/bruno.pedroso/dev/bitbucket"
 alias mvn-my="cp ~/.m2/settings-original.xml ~/.m2/settings.xml"
 alias mvn-ns="cp ~/.m2/settings-ns.xml ~/.m2/settings.xml"
+alias localtstst=mvn clean test -Dspring.profiles.active=test -Dcucumber.options="--tags ~@IntegrationTest"  -U
 
+alias externalip="curl ipecho.net/plain ; echo"
+
+alias terraform="~/workspace/sysops/terraform"
+alias kamel=~/workspace/dev/devops/camel/camel-k-client-1.0.0-RC1-mac-64bit/kamel
