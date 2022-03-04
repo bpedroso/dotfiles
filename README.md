@@ -1,5 +1,6 @@
 # Mac #
 
+ - brew: file with setup for brew
  - .zshrc
 
 # Git #
